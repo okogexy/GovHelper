@@ -1,0 +1,29 @@
+.navbar { position: fixed; z-index: 100; inset: 0 0 auto; min-height: var(--nav-height); display: flex; align-items: center; gap: 12px; padding: 14px var(--page-padding); border-bottom: 1px solid rgba(255,255,255,.05); pointer-events: none; backdrop-filter: blur(20px); }
+.navbar > * { pointer-events: auto; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.logo-mark { width: 38px; height: 38px; }
+.brand span { display: grid; }
+.brand b { font-size: 11px; letter-spacing: .18em; }
+.brand small { color: var(--text-muted); font-size: 9px; }
+.nav-menu-button, .nav-context, .nav-servers { height: 38px; display: flex; align-items: center; gap: 8px; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--text); background: rgba(18, 21, 20, .72); text-decoration: none; }
+.nav-menu-button svg { padding: 6px; width: 28px; height: 28px; border-radius: 50%; color: #111; background: var(--text); }
+.nav-context { color: var(--text-muted); font-size: 10px; }
+.nav-servers { margin-left: auto; }
+.nav-servers svg { width: 22px; height: 22px; fill: currentColor; }
+.menu-backdrop { position: fixed; z-index: 200; inset: 0; display: grid; place-items: start center; padding: calc(var(--nav-height) + 16px) var(--page-padding); background: rgba(0,0,0,.68); backdrop-filter: blur(12px); }
+.site-menu { width: min(760px, 100%); padding: 18px; border: 1px solid var(--line); border-radius: 22px; background: rgba(16,19,18,.97); box-shadow: 0 50px 150px #000; }
+.site-menu header { display: flex; align-items: center; gap: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.site-menu header button { margin-left: auto; width: 38px; height: 38px; border: 1px solid var(--line); border-radius: 50%; background: transparent; }
+.site-menu nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; padding-top: 14px; }
+.site-menu nav a { display: flex; align-items: center; gap: 16px; padding: 17px; border-radius: 12px; text-decoration: none; font-size: 20px; }
+.site-menu nav a:hover { background: rgba(197,161,93,.09); }
+.site-menu nav small { color: var(--gold); font-size: 9px; }
+.scroll-progress { position: fixed; z-index: 90; top: 50%; right: max(12px, env(safe-area-inset-right)); display: grid; gap: 7px; transform: translateY(-50%); }
+.progress-track { position: absolute; top: 0; right: 6px; width: 1px; height: 100%; background: var(--line); }
+.progress-track i { display: block; width: 1px; height: 100%; background: var(--gold); transform-origin: top; }
+.scroll-progress a { position: relative; display: flex; justify-content: flex-end; align-items: center; gap: 8px; color: var(--text-muted); font-size: 9px; text-decoration: none; }
+.scroll-progress b { order: 2; width: 13px; height: 13px; border: 1px solid #555; border-radius: 50%; color: transparent; background: var(--bg); transition: .2s; }
+.scroll-progress span { opacity: 0; transition: .2s; }
+.scroll-progress a.active { color: var(--gold); }
+.scroll-progress a.active b { transform: scale(1.35); border-color: var(--gold); background: var(--gold); }
+.scroll-progress a.active span, .scroll-progress a:hover span { opacity: 1; }

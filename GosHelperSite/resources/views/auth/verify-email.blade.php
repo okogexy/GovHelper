@@ -1,0 +1,1 @@
+@extends('layouts.app') @section('title','Подтверждение email') @section('content')<section class="empty-state"><h1>Подтвердите email</h1><p>Мы отправили подписанную ссылку на ваш адрес.</p><form method="post" action="/email/verification-notification">@csrf<button class="button primary">Отправить повторно</button></form></section>@endsection

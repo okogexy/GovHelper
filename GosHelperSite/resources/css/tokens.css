@@ -1,0 +1,16 @@
+:root {
+    --bg: #070909;
+    --bg-soft: #0c0f0f;
+    --surface: #101313;
+    --surface-elevated: #181b1a;
+    --text: #f2efe7;
+    --text-muted: #929793;
+    --line: rgba(255, 255, 255, 0.11);
+    --gold: #c5a15d;
+    --gold-soft: rgba(200, 164, 96, 0.14);
+    --danger: #cf665c;
+    --success: #76a875;
+    --nav-height: 76px;
+    --page-padding: clamp(18px, 4vw, 72px);
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}

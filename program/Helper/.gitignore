@@ -1,0 +1,4 @@
+dist/
+protected-electron/
+release/
+node_modules/

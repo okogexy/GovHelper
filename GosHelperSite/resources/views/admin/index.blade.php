@@ -1,0 +1,1 @@
+@extends('layouts.app') @section('title','Администрирование') @section('content')<section class="portal-panel"><h1>Администрирование</h1><nav>@foreach(['users','plans','subscriptions','licenses','releases','audit-log'] as $item)<a href="/admin/{{ $item }}">{{ $item }}</a>@endforeach</nav></section>@endsection

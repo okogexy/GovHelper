@@ -1,0 +1,135 @@
+.notes-page {
+  background: radial-gradient(circle at 72% 28%, rgba(197, 161, 93, .08), transparent 31%);
+}
+.notes-page .eyebrow { color: #c5a15d; }
+.notes-page .primary-button { background: #c5a15d; color: #151615; }
+.notes-stage {
+  min-height: calc(100% - 90px); padding: 20px;
+  border: 1px solid rgba(224, 207, 169, .12); border-radius: 18px;
+  background: linear-gradient(145deg, rgba(12, 15, 14, .96), rgba(18, 22, 20, .88));
+  box-shadow: 0 35px 100px rgba(0, 0, 0, .38), 0 0 70px rgba(197, 161, 93, .06);
+}
+.notes-grid { align-items: start; gap: 22px; padding: 10px; }
+.note-card {
+  position: relative; min-height: 205px; padding: 17px;
+  border: 1px solid rgba(255, 255, 255, .18); border-radius: 11px;
+  color: #1b1d1b; background: #d9d2bc;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, .42);
+  transform: rotate(-1.2deg); transition: transform .22s, box-shadow .22s;
+}
+.note-card:nth-child(even) { color: #ece9e0; background: #242826; transform: rotate(1.1deg) translateY(12px); }
+.note-card:nth-child(3n) { transform: rotate(.6deg) translateY(-5px); }
+.note-card:hover { z-index: 2; transform: rotate(0) translateY(-6px); box-shadow: 0 32px 75px rgba(0, 0, 0, .55); }
+.note-pin {
+  position: absolute; top: 10px; left: 50%; width: 8px; height: 8px;
+  border-radius: 50%; background: #c5a15d; box-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+  opacity: .28; transition: opacity .18s, transform .18s;
+}
+.note-pin.active { opacity: 1; transform: scale(1.18); }
+.note-card.is-pinned { border-color: rgba(197, 161, 93, .72); box-shadow: 0 25px 65px rgba(0,0,0,.48), 0 0 0 1px rgba(197,161,93,.12); }
+.note-card header span { color: #776c56; }
+.note-card:nth-child(even) header span { color: #c5a15d; }
+.note-card header button { color: inherit; opacity: .45; }
+.note-card header button:hover { opacity: 1; }
+.note-card-actions { display: flex; align-items: center; gap: 3px; }
+.note-card-actions button { width: 27px; height: 27px; display: grid; place-items: center; padding: 0; border-radius: 7px; cursor: pointer; }
+.note-card-actions button.active { color: #9a762e; opacity: 1; background: rgba(197,161,93,.14); }
+.note-content h3 { font-size: 16px; font-weight: 600; }
+.note-content p { color: inherit; opacity: .68; font-size: 11px; line-height: 1.55; }
+.note-card footer button { color: inherit; opacity: .62; }
+.note-card footer button:hover { opacity: 1; }
+.notes-stage .empty-state { grid-column: 1 / -1; border-color: rgba(224, 207, 169, .18); }
+.delete-note-warning { margin: 0; color: var(--muted); line-height: 1.55; }
+.modal footer .danger-button { color: #fff; background: #a83f49; }
+.note-window-root,
+.note-window-root body,
+.note-window-root #root {
+  background: transparent !important;
+}
+.note-window-root body,
+.note-window-root #root {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.floating-note {
+  position: relative;
+  color: #25251f;
+  border: 1px solid rgba(220, 193, 126, .44);
+  background:
+    linear-gradient(115deg, rgba(255,255,255,.16), transparent 34%),
+    repeating-linear-gradient(0deg, transparent 0 24px, rgba(87,72,43,.055) 25px),
+    repeating-linear-gradient(105deg, transparent 0 8px, rgba(70,58,37,.018) 9px),
+    #d9d2bc;
+  box-shadow: inset 0 0 45px rgba(91,70,33,.08);
+  clip-path: inset(0 round 10px);
+}
+.floating-note::after {
+  content: "";
+  position: absolute;
+  inset: 40px 0 25px;
+  pointer-events: none;
+  background: radial-gradient(circle at 76% 15%, rgba(133,96,38,.08), transparent 28%);
+}
+.floating-note header {
+  position: relative;
+  z-index: 2;
+  min-height: 42px;
+  color: #ece9e0;
+  border-bottom: 1px solid rgba(224,207,169,.18);
+  background:
+    repeating-linear-gradient(105deg, transparent 0 8px, rgba(255,255,255,.014) 9px),
+    linear-gradient(145deg, #292e2a, #191d1a);
+  box-shadow: 0 7px 18px rgba(0,0,0,.24);
+}
+.floating-note-title, .floating-note-actions { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.floating-note-title b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+.floating-note-title i {
+  width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 28%, #f3d992, #9b7135 72%);
+  box-shadow: 0 2px 6px #000a, 0 0 0 1px rgba(255,229,160,.15);
+}
+.floating-note-actions { -webkit-app-region: no-drag; }
+.floating-note-actions button {
+  width: 29px; height: 29px; display: grid; place-items: center; padding: 0;
+  border-radius: 7px; color: #9d9e95; transition: .16s;
+}
+.floating-note-actions button:hover { color: #eee7d4; background: rgba(255,255,255,.07); }
+.floating-note-actions button.active { color: #d5b769; background: rgba(197,161,93,.12); }
+.floating-note-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding: 18px 18px 12px !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+  text-shadow: 0 1px rgba(255,255,255,.35);
+}
+.floating-note footer {
+  position: relative;
+  z-index: 2;
+  min-height: 25px;
+  padding: 6px 11px;
+  color: #776d59;
+  border-top: 1px solid rgba(97,78,44,.12);
+  background: rgba(214,205,180,.68);
+  font-size: 9px;
+  text-align: center;
+}
+.floating-note.locked { border-color: rgba(213,183,105,.72); box-shadow: inset 0 0 22px rgba(197,161,93,.16); }
+.floating-note.locked footer { color: #4f4839; background: rgba(205,185,135,.78); }
+[data-theme="light"] .notes-page { background: radial-gradient(circle at 72% 28%, rgba(154,107,40,.07), transparent 32%); }
+[data-theme="light"] .notes-stage {
+  border-color: #d8cdbc;
+  background: linear-gradient(145deg, #e9e2d7, #f5f0e7);
+  box-shadow: 0 24px 60px rgba(70,53,29,.1);
+}
+[data-theme="light"] .note-card { border-color: #cbbda8; box-shadow: 0 14px 30px rgba(70,53,29,.15); }
+[data-theme="light"] .note-card:nth-child(even) { color: #29251f; background: #f6f1e7; }
+[data-theme="light"] .note-card:nth-child(even) header span { color: #76501d; }
+[data-theme="light"] .notes-stage .empty-state { color: #70685d; border-color: #c9baa3; }
+@media (max-width: 760px) {
+  .notes-stage { padding: 10px; }
+  .notes-grid { gap: 14px; }
+  .note-card, .note-card:nth-child(even), .note-card:nth-child(3n) { transform: none; }
+}

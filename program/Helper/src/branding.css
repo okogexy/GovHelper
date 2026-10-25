@@ -1,0 +1,12 @@
+.brand b i { color: var(--accent); font-style: normal; }
+.sidebar-bottom { margin-top: auto; }
+.developer-credit {
+  padding: 12px 8px 10px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.55;
+}
+.sidebar-bottom .sidebar-footer { margin-top: 0; }
+.compact .developer-credit { display: none; }
+@media (max-width: 760px) { .developer-credit { display: none; } }

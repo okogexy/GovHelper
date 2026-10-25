@@ -1,0 +1,4 @@
+.detective-dashboard .evidence-card{position:relative;transform:none;font-family:inherit;color:inherit}
+.detective-dashboard .evidence-card span,.detective-dashboard .evidence-card small{position:static;inset:auto;overflow:visible;white-space:normal}
+.detective-dashboard .evidence-card:before{left:auto;bottom:auto;border-radius:0;box-shadow:none}
+.portal-main:has(.detective-dashboard){padding:72px 0 0}

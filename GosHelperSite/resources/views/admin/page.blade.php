@@ -1,0 +1,1 @@
+@extends('layouts.app') @section('title','Admin · '.$page) @section('content')<section class="portal-panel"><h1>{{ $page }}</h1><p>Доступ ограничен ролью администратора на сервере.</p></section>@endsection

@@ -1,0 +1,76 @@
+{
+  "name": "gos-helper-next",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Veyron GovHelper for Majestic RP",
+  "main": "protected-electron/main.cjs",
+  "author": "OKOGEXY",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "dev:desktop": "npm run build && npm run protect && electron .",
+    "build": "vite build",
+    "protect": "node scripts/protect-electron.mjs",
+    "start": "npm run protect && electron .",
+    "test": "node --test",
+    "dist": "npm run build && npm run protect && electron-builder --win portable",
+    "dist:dir": "npm run build && npm run protect && electron-builder --dir"
+  },
+  "dependencies": {
+    "lucide-react": "1.24.0",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.0.3",
+    "7zip-bin": "^5.2.0",
+    "electron": "^43.1.1",
+    "electron-builder": "^26.15.3",
+    "prettier": "^3.9.1",
+    "vite": "8.1.4"
+  },
+  "build": {
+    "appId": "cloud.veyron.goshelper",
+    "productName": "Veyron • GovHelper",
+    "asar": true,
+    "electronFuses": {
+      "runAsNode": false,
+      "enableCookieEncryption": true,
+      "enableNodeOptionsEnvironmentVariable": false,
+      "enableNodeCliInspectArguments": false,
+      "enableEmbeddedAsarIntegrityValidation": true,
+      "onlyLoadAppFromAsar": true,
+      "loadBrowserProcessSpecificV8Snapshot": false,
+      "grantFileProtocolExtraPrivileges": true
+    },
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "protected-electron/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "resources/config/program.json",
+        "to": "config/program.json"
+      },
+      {
+        "from": "resources/databases",
+        "to": "databases",
+        "filter": [
+          "*.json"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "signAndEditExecutable": false,
+      "artifactName": "Veyron-GovHelper-${version}-${arch}.${ext}"
+    }
+  }
+}
